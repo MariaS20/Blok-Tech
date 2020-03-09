@@ -1,6 +1,9 @@
 // test
 const express = require('express')
 const app = express()
+const ejs = require("ejs")
+const slug = rquire("slug")
+const bodyParser = require('body-parser')
 const port = 8000
 
 app.use(express.static('public'))
