@@ -1,0 +1,11 @@
+<% include head.ejs %>
+<title>Gebruikers - overzicht</title>
+<h1>Gebruikers</h1>
+<% for (var index = 0; index < data.length; index++) { %>
+<h2><%= data[index].naam %></a></h2>
+<p><%= data[index].email %></p>
+<% } %>
+<p>
+  <a href=/add>Voeg gebruiker toe</a>
+</p>
+<% include tail.ejs %>

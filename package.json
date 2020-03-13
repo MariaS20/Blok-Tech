@@ -9,6 +9,9 @@
   "author": "tess",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.18.2",
+    "dotenv": "^8.2.0",
+    "ejs": "^2.7.4",
     "express": "^4.17.1",
     "mongodb": "^3.5.5",
     "nodemon": "^2.0.2"
