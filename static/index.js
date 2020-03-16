@@ -1,29 +1,29 @@
-/* eslint-env browser */
-/* eslint-disable semi */
+// /* eslint-env browser */
+// /* eslint-disable semi */
 
-var remove = document.getElementById('js-remove')
+// var remove = document.getElementById('js-remove')
 
-if (remove) {
-  remove.addEventListener('click', onremove)
-}
+// if (remove) {
+//   remove.addEventListener('click', onremove)
+// }
 
-function onremove(ev) {
-  var node = ev.target
-  var id = node.dataset.id
+// function onremove(ev) {
+//   var node = ev.target
+//   var id = node.dataset.id
 
-  fetch('/' + id, {method: 'delete'})
-    .then(onresponse)
-    .then(onload, onfail)
+//   fetch('/' + id, {method: 'delete'})
+//     .then(onresponse)
+//     .then(onload, onfail)
 
-  function onresponse(res) {
-    return res.json()
-  }
+//   function onresponse(res) {
+//     return res.json()
+//   }
 
-  function onload() {
-    window.location = '/'
-  }
+//   function onload() {
+//     window.location = '/'
+//   }
 
-  function onfail() {
-    throw new Error('Could not delete!')
-  }
-}
+//   function onfail() {
+//     throw new Error('Could not delete!')
+//   }
+// }

@@ -2,7 +2,6 @@
 
 var express = require('express')
 var bodyParser = require('body-parser')
-//var multer = require('multer')
 var mongo = require('mongodb')
 
 require('dotenv').config()
@@ -29,6 +28,8 @@ express()
   .get('/add', form)
   .get('/login', loginform)
   .get('/:id', user)
+  .get('/loginFailed', checklogin)
+  .get('/loginSucces', checklogin)
   .delete('/:id', remove)
   .use(notFound)
   .listen(8000)
@@ -40,7 +41,7 @@ function gebruikers(req, res, next) {
     if (err) {
       next(err)
     } else {
-      res.render('list.ejs', {data: data})
+      res.render('login.ejs', {data: data})
     }
   }
 }
@@ -93,11 +94,11 @@ function checklogin(req, res, next) {
       next(err)
     } else {
       if (data.wachtwoord == req.body.wachtwoord) {
-        console.log('Login geslaagd');
-        //res.redirect('/loginsuccess') 
+        console.log('Login geslaagd'); 
+        res.render('loginSucces.ejs')
       } else {
         console.log('Login mislukt');
-        //res.redirect('/loginfailed')
+        res.render('loginFailed.ejs')
   
       }
     }

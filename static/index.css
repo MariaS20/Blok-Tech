@@ -1,18 +1,50 @@
 * { box-sizing: border-box }
 
 body {
-  font-family: sans-serif;
-  background: black;
-  color: white;
+  font-family: 'Abel', sans-serif;
+  background: white;
+  color: black;
   max-width: 36em;
   margin: 0 auto
 }
 
 a {
-  color: lime
+  color: black;
+}
+
+h1{
+  font-size: 2em;
+  text-align: center;
 }
 
 label, input, textarea, button { margin: 1em 0 }
+
+label{
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.3em;
+
+}
+
+form{
+        
+  background: white;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 1em;
+  border: solid #ededed;
+  border-radius: 10px;
+  
+  box-shadow: 11px 12px 23px -4px rgba(122,122,122,0.52);;
+  
+}
+
+form * {
+  display: block;
+  box-sizing: border-box;
+ 
+  /*het geeft de padding en border mee aan de width en height van de box*/
+  width: 100%;
+}
 
 input, textarea, button {
   font-size: 1em;
@@ -23,12 +55,48 @@ input, textarea, button {
 
 input, textarea { width: 100% }
 
-img {
-  max-width: 100%;
-  max-height: 15em
+input {
+  /* padding: 2em;
+  margin: 1em 0; */
+
+  border-radius: 5px;
+  border: 1.2px solid #bfbfbf;
+  
+  outline-color: #fcd303;
 }
 
-.danger {
-  background: red;
-  color: white
+
+
+button {
+  background-color: #FFF;
+  padding: 1em;
+  margin: 1em 0 0;
+  font-size: 1.2em;
+  font-family: 'Oswald', sans-serif;
+  border-radius: 5px;
+  border: 3px solid #b5ceeb;
+  outline-color: #b5ceeb;
+}
+
+button:hover {
+ background: #b5ceeb;
+  color: #FFF;
+  border-color: #b5ceeb;
+  transition: all 0.6s ease 0.1s;
+}
+a {
+  color: black;
+  font-size: 1.2em;
+  text-align: center;
+  display: grid;
+  justify-content: center;
+  text-align: justify;
+  margin-top: 30px;
+  margin-bottom: 30px;
+
+}
+
+a:visited {
+  text-decoration: none;
+  
 }
