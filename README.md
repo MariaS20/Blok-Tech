@@ -11,10 +11,10 @@ Ik maak gebruik van MongoDb
 1. Open een terminal
 
 2. Clone mijn repository 
-' git clone https://github.com/MariaS20/Blok-Tech'
+`git clone https://github.com/MariaS20/Blok-Tech ` 
 
 3. Zodra je in de clone van mijn repository zit, installeer npm 
-' npm install '
+`npm install`
 
 4. Start de applicatie
-' node server.js '
+`node server.js`
