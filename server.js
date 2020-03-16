@@ -18,11 +18,9 @@ mongo.MongoClient.connect(url, function (err, client) {
   if (err) {
     throw err
   }
-
+  
   db = client.db(process.env.DB_NAME)
 })
-
-
 
 express()
   .use(express.static('static'))
