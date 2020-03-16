@@ -1,13 +1,14 @@
 /* eslint-disable semi */
 
-var express = require('express')
-var bodyParser = require('body-parser')
-var mongo = require('mongodb')
+const express = require('express')
+const bodyParser = require('body-parser')
+const mongo = require('mongodb')
+const mongoose = require('mongoose');
 
 require('dotenv').config()
 
-var db = null
-var url = 'mongodb://' + process.env.DB_HOST + ':' + process.env.DB_PORT
+const db = null
+const url = 'mongodb://' + process.env.DB_HOST + ':' + process.env.DB_PORT
 
 mongo.MongoClient.connect(url, function (err, client) {
   if (err) {
@@ -16,6 +17,20 @@ mongo.MongoClient.connect(url, function (err, client) {
 
   db = client.db(process.env.DB_NAME)
 })
+
+mongoose.connection.on('connected', () =>{
+  console.log("mongoose is connected");
+  });
+
+// const Schema = mongoose.Schema;
+// const BlogPostSchema = new Schema({
+//   title: String,
+//   body: String,
+//   date: {
+//    type: String,
+//    default: Date.now()
+//  }
+// });
 
 express()
   .use(express.static('static'))
@@ -47,7 +62,7 @@ function gebruikers(req, res, next) {
 }
 
 function user(req, res, next) {
-  var id = req.params.id
+  const id = req.params.id
 
   db.collection('user').findOne({
     _id: new mongo.ObjectID(id)
@@ -106,7 +121,7 @@ function checklogin(req, res, next) {
 }
 
 function remove(req, res, next) {
-  var id = req.params.id
+  const id = req.params.id
 
   db.collection('user').deleteOne({
     _id: new mongo.ObjectID(id)
