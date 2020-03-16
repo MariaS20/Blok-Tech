@@ -15,6 +15,12 @@ a {
 h1{
   font-size: 2em;
   text-align: center;
+  font-family: 'Oswald', sans-serif;
+}
+p{
+  font-size: 1.5em;
+  font-family: sans-serif;
+  text-align: center;
 }
 
 label, input, textarea, button { margin: 1em 0 }
