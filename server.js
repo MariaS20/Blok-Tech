@@ -1,5 +1,3 @@
-/* eslint-disable semi */
-
 const express = require('express')
 const bodyParser = require('body-parser')
 const mongo = require('mongodb')
@@ -11,6 +9,8 @@ const port = 8000
 
 require('dotenv').config()
 
+
+//connect met de database
 let db = null
 const url = 'mongodb://' + process.env.DB_HOST + ':' + process.env.DB_PORT
 
@@ -18,7 +18,7 @@ mongo.MongoClient.connect(url, function (err, client) {
   if (err) {
     throw err
   }
-  
+
   db = client.db(process.env.DB_NAME)
 })
 
@@ -90,6 +90,7 @@ function add(req, res, next) {
   }
 }
 
+//checkt de ingegeven username en het wachtwoord met die uit de database 
 function checklogin(req, res, next) {
   db.collection('user').findOne({naam:req.body.naam}, done) 
 
@@ -111,6 +112,7 @@ function checklogin(req, res, next) {
 }
 
 
+//dealt met not found pages
 function notFound(req, res) {
   res.status(404).render('404.ejs')
 }
