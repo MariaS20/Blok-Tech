@@ -62,7 +62,7 @@ function user(req, res, next) {
 }
 
 function form(req, res) {
-  res.render('add.ejs')
+  res.render('registreren.ejs')
 }
 
 function loginform(req, res) {
