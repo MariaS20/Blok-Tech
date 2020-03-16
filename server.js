@@ -122,5 +122,5 @@ function remove(req, res, next) {
 }
 
 function notFound(req, res) {
-  res.status(404).render('not-found.ejs')
+  res.status(404).render('404.ejs')
 }
