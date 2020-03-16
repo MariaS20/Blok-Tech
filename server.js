@@ -3,11 +3,15 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const mongo = require('mongodb')
-const mongoose = require('mongoose');
+const mongoose = require('mongoose')
+const ejs = require("ejs")
+const slug = require("slug")
+const port = 8000
+
 
 require('dotenv').config()
 
-const db = null
+let db = null
 const url = 'mongodb://' + process.env.DB_HOST + ':' + process.env.DB_PORT
 
 mongo.MongoClient.connect(url, function (err, client) {
@@ -18,19 +22,7 @@ mongo.MongoClient.connect(url, function (err, client) {
   db = client.db(process.env.DB_NAME)
 })
 
-mongoose.connection.on('connected', () =>{
-  console.log("mongoose is connected");
-  });
 
-// const Schema = mongoose.Schema;
-// const BlogPostSchema = new Schema({
-//   title: String,
-//   body: String,
-//   date: {
-//    type: String,
-//    default: Date.now()
-//  }
-// });
 
 express()
   .use(express.static('static'))
@@ -45,7 +37,6 @@ express()
   .get('/:id', user)
   .get('/loginFailed', checklogin)
   .get('/loginSucces', checklogin)
-  .delete('/:id', remove)
   .use(notFound)
   .listen(8000)
 
@@ -104,6 +95,7 @@ function add(req, res, next) {
 function checklogin(req, res, next) {
   db.collection('user').findOne({naam:req.body.naam}, done) 
 
+
   function done(err, data) {
     if (err) {
       next(err)
@@ -120,21 +112,6 @@ function checklogin(req, res, next) {
   }
 }
 
-function remove(req, res, next) {
-  const id = req.params.id
-
-  db.collection('user').deleteOne({
-    _id: new mongo.ObjectID(id)
-  }, done)
-
-  function done(err) {
-    if (err) {
-      next(err)
-    } else {
-      res.json({status: 'ok'})
-    }
-  }
-}
 
 function notFound(req, res) {
   res.status(404).render('404.ejs')
