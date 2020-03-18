@@ -31,12 +31,14 @@ express()
   .post('/login', checklogin)
   .get('/registreren', form)
   .get('/login', loginform)
-  .get('/:id', user)
+  // .get('/:id', user)
   .get('/loginFailed', checklogin)
   .get('/loginSucces', checklogin)
   .use(notFound)
   .listen(8000)
 
+
+//vind de db die wordt gebruikt
 function gebruikers(req, res, next) {
   db.collection('user').find().toArray(done)
 
@@ -49,29 +51,30 @@ function gebruikers(req, res, next) {
   }
 }
 
-function user(req, res, next) {
-  const id = req.params.id
+// function user(req, res, next) {
+//   const id = req.params.id
 
-  db.collection('user').findOne({
-    _id: new mongo.ObjectID(id)
-  }, done)
+//   db.collection('user').findOne({
+//     _id: new mongo.ObjectID(id)
+//   }, done)
 
-  function done(err, data) {
-    if (err) {
-      next(err)
-    } else {
-      res.render('detail.ejs', {data: data})
-    }
-  }
+//   function done(err, data) {
+//     if (err) {
+//       next(err)
+//     } else {
+//       res.render('detail.ejs', {data: data})
+//     }
+//   }
+// }
+
+function loginform(req, res) {
+  res.render('login.ejs')
 }
 
 function form(req, res) {
   res.render('registreren.ejs')
 }
 
-function loginform(req, res) {
-  res.render('login.ejs')
-}
 
 function add(req, res, next) {
   db.collection('user').insertOne({
