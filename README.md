@@ -9,7 +9,7 @@ Voor een datingapp moest ik een feature uitwerken, de feature is het inloggen en
 Wanneer ik op een ander device zit, wil ik makkelijk kunnen inloggen, zodat ik hier niet veel tijd aan hoef te besteden.
 
 ## Build with
-Ik heb de code editor Visual Studio Code gebruikt. Voor het installeeren van de database en packages de standaard terminal op MacOS.
+Ik heb de code editor Visual Studio Code gebruikt. Voor het installeren van de database en packages de standaard terminal op MacOS.
 
 ## Database
 Ik maak gebruik van MongoDb, deze heb ik lokaal geïnstalleerd. 
