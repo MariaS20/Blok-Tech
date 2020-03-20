@@ -1,7 +1,10 @@
 In deze readme kun je informatie vinden over de feature die ik heb gebouwd.
 
 # Mijn feature
-De feature waar ik aan heb gewerkt is het inloggen en registreren voor een datingapp. Overige informatie hierover is te vinden in mijn wiki. 
+De feature waar ik aan heb gewerkt is het inloggen en registreren voor een datingapp. De naam van de app is Soundmatch em je match op interesse in de zelfde muziek.  
+
+## Mijn job story
+Wanneer ik op een ander device zit, wil ik makkelijk kunnen inloggen, zodat ik hier niet veel tijd aan hoef te besteden.
 
 ## Database
 Ik maak gebruik van MongoDb, deze heb ik lokaal geïnstalleerd. 
@@ -28,7 +31,7 @@ node server.js
 ## Packages
 Hieronder de packages die ik heb gebruikt.
 
-Express
+Express     https://expressjs.com
 
 Body Parser https://www.npmjs.com/package/express-session
 
@@ -39,6 +42,10 @@ ejs         https://www.npmjs.com/package/ejs
 slug        https://www.npmjs.com/package/slug
 
 dotenv      https://www.npmjs.com/package/dotenv
+
+## Wiki
+Voor meer informatie over het project en het onderzoek dat ik heb gedaan kunt u in mijn wiki kijken. 
+
 
 ## License
 
