@@ -1,10 +1,15 @@
 In deze readme kun je informatie vinden over de feature die ik heb gebouwd.
 
-# Mijn feature
-De feature waar ik aan heb gewerkt is het inloggen en registreren voor een datingapp. De naam van de app is Soundmatch em je match op interesse in de zelfde muziek.  
+# Datingapp
+
+## Over de app
+Voor een datingapp moest ik een feature uitwerken, de feature is het inloggen en registreren voor een datingapp. De naam van de app is Soundmatch em je match op interesse in de zelfde muziek.  
 
 ## Mijn job story
 Wanneer ik op een ander device zit, wil ik makkelijk kunnen inloggen, zodat ik hier niet veel tijd aan hoef te besteden.
+
+## Build with
+Ik heb de code editor Visual Studio Code gebruikt. Voor het installeeren van de database en packages de standaard terminal op MacOS.
 
 ## Database
 Ik maak gebruik van MongoDb, deze heb ik lokaal geïnstalleerd. 
