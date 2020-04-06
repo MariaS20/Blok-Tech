@@ -7,20 +7,17 @@
   "license": "MIT",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
-},
-
-"dependencies":{
-  "body-parser": "^1.18.2",
-  "dotenv": "^8.2.0",
-  "ejs": "^2.7.4",
-  "express": "^4.17.1",
-  "minimist": "^1.2.5",
-  "mongodb": "^3.5.5",
-  "slug": "^2.1.1"
-},
-
+  },
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "dotenv": "^8.2.0",
+    "ejs": "^2.7.4",
+    "express": "^4.17.1",
+    "minimist": "^1.2.5",
+    "mongodb": "^3.5.5",
+    "slug": "^2.1.1"
+  },
   "devDependencies": {
     "nodemon": "^2.0.2"
-
   }
 }
