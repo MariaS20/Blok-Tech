@@ -1,6 +1,6 @@
 In deze readme kun je informatie vinden over de feature die ik heb gebouwd.
 
-# Datingapp
+# Datingapp test
 
 ## Over de app
 Voor een datingapp moest ik een feature uitwerken, de feature is het inloggen en registreren voor een datingapp. De naam van de app is Soundmatch em je match op interesse in de zelfde muziek.  
