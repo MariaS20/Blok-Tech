@@ -1,8 +1,8 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const mongo = require('mongodb')
-const ejs = require("ejs")
-const slug = require("slug")
+const ejs = require('ejs')
+const slug = require('slug')
 const port = 8000
 
 
