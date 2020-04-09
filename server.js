@@ -34,8 +34,10 @@ express()
   // .get('/:id', user)
   .get('/loginFailed', checklogin)
   .get('/loginSucces', checklogin)
+  .get('/matches', showMatches)
   .use(notFound)
   .listen(8000)
+  
 
 
 //vind de db die wordt gebruikt
@@ -66,6 +68,10 @@ function gebruikers(req, res, next) {
 //     }
 //   }
 // }
+function showMatches(req, res) {
+  res.render('matches.ejs')
+}
+
 
 function loginform(req, res) {
   res.render('login.ejs')
