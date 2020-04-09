@@ -39,7 +39,6 @@ express()
   .listen(8000)
   
 
-
 //vind de db die wordt gebruikt
 function gebruikers(req, res, next) {
   db.collection('user').find().toArray(done)
@@ -68,8 +67,25 @@ function gebruikers(req, res, next) {
 //     }
 //   }
 // }
+
+// function showMatches(req, res) {
+//   res.render('matches.ejs')
+// }
+
+
+const test = [
+  {
+    id: 'persoon',
+    name: 'J',
+    age: '21, Amsterdam',
+    eten: 'Pizza'
+  }
+
+]
+
+//laden van data op de lijstje pagina
 function showMatches(req, res) {
-  res.render('matches.ejs')
+  res.render('matches.ejs', {data: test})
 }
 
 

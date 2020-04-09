@@ -106,3 +106,8 @@ a:visited {
   text-decoration: none;
   
 }
+
+.lijst-matches {
+  background-color: pink;
+  padding: 1em;
+}
