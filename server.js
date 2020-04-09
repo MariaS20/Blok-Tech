@@ -79,6 +79,12 @@ const test = [
     name: 'J',
     age: '21, Amsterdam',
     eten: 'Pizza'
+  },
+  {
+    id: 'persoon',
+    name: 'J',
+    age: '21, Amsterdam',
+    eten: 'Pizza'
   }
 
 ]
