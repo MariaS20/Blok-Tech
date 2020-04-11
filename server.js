@@ -1,8 +1,8 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const mongo = require('mongodb')
-const ejs = require("ejs")
-const slug = require("slug")
+const ejs = require('ejs')
+const slug = require('slug')
 const port = 8000
 
 
@@ -34,9 +34,10 @@ express()
   // .get('/:id', user)
   .get('/loginFailed', checklogin)
   .get('/loginSucces', checklogin)
+  .get('/matches', showMatches)
   .use(notFound)
   .listen(8000)
-
+  
 
 //vind de db die wordt gebruikt
 function gebruikers(req, res, next) {
@@ -66,6 +67,33 @@ function gebruikers(req, res, next) {
 //     }
 //   }
 // }
+
+// function showMatches(req, res) {
+//   res.render('matches.ejs')
+// }
+
+
+const test = [
+  {
+    id: 'persoon',
+    name: 'J',
+    age: '21, Amsterdam',
+    eten: 'Pizza'
+  },
+  {
+    id: 'persoon',
+    name: 'J',
+    age: '21, Amsterdam',
+    eten: 'Pizza'
+  }
+
+]
+
+//laden van data op de lijstje pagina
+function showMatches(req, res) {
+  res.render('matches.ejs', {data: test})
+}
+
 
 function loginform(req, res) {
   res.render('login.ejs')

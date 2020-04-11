@@ -106,3 +106,23 @@ a:visited {
   text-decoration: none;
   
 }
+
+.lijst-matches {
+  background-color: pink;
+  padding: 1em;
+  margin-bottom: 2em;
+}
+
+.lijst-matches p{ 
+  background-color: blue;
+}
+
+.lijst-matches h2:first-of-type{
+  background-color: green;
+  margin-top: 0em;
+}
+
+.lijst-matches h2{
+  background-color: green;
+  margin-top: 5em;
+}
