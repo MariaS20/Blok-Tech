@@ -1,0 +1,16 @@
+<% include head.ejs %>
+<h1><%= data.name %></h1>
+<p><%= data.age %></p>
+<p><%= data.over %></p>
+
+
+
+<p><%= data.foto %></p>
+<% if(data.foto === 'x.jpg'){ %>
+   <img src="x.jpg" alt="">
+ <% } else if(data.foto === 't.jpg'){ %>  
+   <img src="t.jpg" alt="">
+ <%} else{ %>
+    <img src="ski.png" alt="">
+<% } %>
+<% include tail.ejs %>

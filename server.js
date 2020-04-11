@@ -93,7 +93,8 @@ const deMatches = [
     name: 'Frank',
     age: '20, Leiden',
     eten: 'Pizza', 
-    over: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad' 
+    over: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad',
+    foto: 't.jpg' 
   },
   {
     id: 'Dean',
@@ -101,7 +102,7 @@ const deMatches = [
     age: '21, Amsterdam',
     eten: 'Pizza',
     over: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad',
-    
+    foto: 'ski.png'
   }
 
 ]
@@ -110,6 +111,8 @@ const deMatches = [
 function showMatches(req, res) {
   res.render('matches.ejs', {data: deMatches})
 }
+
+
 
 //pagina per individuele match
 function match(req, res, next) {
