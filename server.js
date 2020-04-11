@@ -2,7 +2,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const mongo = require('mongodb')
 const ejs = require("ejs")
-const slug = require("slug")
+const slug = require('slug')
 const port = 8000
 
 
@@ -13,13 +13,15 @@ require('dotenv').config()
 let db = null
 const url = 'mongodb://' + process.env.DB_HOST + ':' + process.env.DB_PORT
 
-mongo.MongoClient.connect(url, function (err, client) {
+mongo.MongoClient.connect(url, { useUnifiedTopology: true }, function () {
   if (err) {
     throw err
   }
 
   db = client.db(process.env.DB_NAME)
 })
+
+
 
 express()
   .use(express.static('static'))
@@ -72,6 +74,21 @@ function gebruikers(req, res, next) {
 //   }
 // }
 
+
+ //Data voor de form
+ const formData = {
+  id: '', //lege id om een id in op te slaan
+  imageSet1: [{ imageUrl: 'images/burrito.jpg', name:'burrito', selected: false },
+  { imageUrl: 'images/tacos.jpg', name:'tacos', selected: false }],
+
+  imageSet2: [{ imageUrl: 'images/burger.jpg', name:'burger', selected: false },
+  { imageUrl: 'images/hot-dog.jpg', name:'hot-dog', selected: false}],
+
+  imageSet3: [{ imageUrl: 'images/pasta.jpg', name:'pasta', selected: false },
+  { imageUrl: 'images/pizza.jpg', name:'pizza', selected: false }]
+}
+
+
 function choice(req, res)  {
   res.render('choice.ejs', {formData})
 }
@@ -87,19 +104,6 @@ function loginform(req, res) {
 
 function form(req, res) {
   res.render('registreren.ejs')
-}
-
- //Data voor de form
- const formData = {
-  id: '', //lege id om een id in op te slaan
-  imageSet1: [{ imageUrl: 'images/burrito.jpg', name:'burrito', selected: false },
-  { imageUrl: 'images/tacos.jpg', name:'tacos', selected: false }],
-
-  imageSet2: [{ imageUrl: 'images/burger.jpg', name:'burger', selected: false },
-  { imageUrl: 'images/hot-dog.jpg', name:'hot-dog', selected: false}],
-
-  imageSet3: [{ imageUrl: 'images/pasta.jpg', name:'pasta', selected: false },
-  { imageUrl: 'images/pizza.jpg', name:'pizza', selected: false }]
 }
 
 
@@ -144,11 +148,10 @@ function resetSelectedImages() {
   }
 }
 
-
 function sendChoice(req, res, next) {
   let form = req.body;
 
-  db.collection.insertOne({
+  collection.insertOne({
     Interest1: form.food1,
     Interest2: form.food2,
     Interest3: form.food3
@@ -203,6 +206,7 @@ function checklogin(req, res, next) {
     }
   }
 }
+
 
 
 //dealt met not found pages
