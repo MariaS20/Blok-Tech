@@ -3,6 +3,7 @@ const bodyParser = require('body-parser')
 const mongo = require('mongodb')
 const ejs = require('ejs')
 const slug = require('slug')
+const find = require('array-find')
 const port = 8000
 
 
@@ -10,10 +11,13 @@ require('dotenv').config()
 
 
 //connect met de database
-let db = null
-const url = 'mongodb://' + process.env.DB_HOST + ':' + process.env.DB_PORT
 
-mongo.MongoClient.connect(url, function (err, client) {
+let db = null
+const url = 'mongodb://' + process.env.DB_HOST + ':' + process.env.DB_PORT 
+
+
+mongo.MongoClient.connect(url,{ useUnifiedTopology: true }, function (err, client) {
+  
   if (err) {
     throw err
   }
@@ -35,6 +39,8 @@ express()
   .get('/loginFailed', checklogin)
   .get('/loginSucces', checklogin)
   .get('/matches', showMatches)
+  .get('/', match)
+  .get('/:id', match)
   .use(notFound)
   .listen(8000)
   
@@ -72,27 +78,56 @@ function gebruikers(req, res, next) {
 //   res.render('matches.ejs')
 // }
 
-
-const test = [
+//info van de matches
+const deMatches = [
   {
-    id: 'persoon',
-    name: 'J',
-    age: '21, Amsterdam',
-    eten: 'Pizza'
+    id: 'Kai',
+    name: 'Kai',
+    age: '22, Utrecht',
+    eten: 'Pizza', 
+    over: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad', 
+    foto: 'x.jpg'
   },
   {
-    id: 'persoon',
-    name: 'J',
+    id: 'Frank',
+    name: 'Frank',
+    age: '20, Leiden',
+    eten: 'Pizza', 
+    over: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad' 
+  },
+  {
+    id: 'Dean',
+    name: 'Dean',
     age: '21, Amsterdam',
-    eten: 'Pizza'
+    eten: 'Pizza',
+    over: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad',
+    
   }
 
 ]
 
-//laden van data op de lijstje pagina
+//weergeven van alle matches
 function showMatches(req, res) {
-  res.render('matches.ejs', {data: test})
+  res.render('matches.ejs', {data: deMatches})
 }
+
+//pagina per individuele match
+function match(req, res, next) {
+  var id = req.params.id
+  var match = find(deMatches, function (value) {
+    return value.id === id
+  })
+
+  if (!match) {
+    next()
+    return
+  }
+
+  res.render('profile.ejs', {data: match})
+}
+
+
+
 
 
 function loginform(req, res) {
