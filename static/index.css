@@ -126,3 +126,17 @@ a:visited {
   background-color: green;
   margin-top: 5em;
 }
+
+.profiel-info {
+  color: green;
+}
+
+.profiel-info img{
+  width: 60%;
+  display: block;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}

@@ -81,28 +81,28 @@ function gebruikers(req, res, next) {
 //info van de matches
 const deMatches = [
   {
-    id: 'Kai',
-    name: 'Kai',
+    id: 'match1',
+    name: 'naam1',
     age: '22, Utrecht',
     eten: 'Pizza', 
     over: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad', 
-    foto: 'x.jpg'
+    foto: 'profiel1.jpg'
   },
   {
-    id: 'Frank',
-    name: 'Frank',
+    id: 'match2',
+    name: 'naam2',
     age: '20, Leiden',
     eten: 'Pizza', 
     over: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad',
-    foto: 't.jpg' 
+    foto: 'profiel2.jpg' 
   },
   {
-    id: 'Dean',
-    name: 'Dean',
+    id: 'naam3',
+    name: 'ski mask the slump god',
     age: '21, Amsterdam',
     eten: 'Pizza',
     over: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad',
-    foto: 'ski.png'
+    foto: 'profiel3.jpg'
   }
 
 ]
