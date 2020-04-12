@@ -128,7 +128,7 @@ a:visited {
 }
 
 .profiel-info {
-  color: green;
+  color: red;
 }
 
 .profiel-info img{
@@ -139,4 +139,18 @@ a:visited {
   left: 0;
   right: 0;
   margin: auto;
+  margin-top: 3em;
+}
+
+.liken {
+  margin-top: 2em;
+  display: inline-flex;
+  justify-content: space-around;
+}
+
+.liken img {
+  width: 15%;
+  height: 15%;
+
+  margin: 0;
 }
