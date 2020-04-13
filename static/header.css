@@ -96,19 +96,24 @@ header {
     margin: 0 auto;
     text-align: center
   }
-  
+
+.lijst-matches img:first-of-type{
+    width: 50%;
+    margin-top: 0em;
+}
+
+.lijst-matches img{
+    width: 50%;
+    margin-top: 4em;
+}
+ 
   .lijst-matches p{ 
     background-color: blue;
   }
   
-  .lijst-matches h2:first-of-type{
-    background-color: green;
-    margin-top: 0em;
-  }
-  
   .lijst-matches h2{
     background-color: green;
-    margin-top: 5em;
+    margin-top: 1em;
   }
   
   .profiel-info {
