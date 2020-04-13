@@ -4,7 +4,7 @@ const bodyParser = require('body-parser')
 const mongo = require('mongodb')
 const ejs = require("ejs")
 const slug = require('slug')
-const port = 4000
+const port = 8000
 
 
 require('dotenv').config()
@@ -18,19 +18,6 @@ const client = new MongoClient(uri, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
-
-
-
-// let db = null
-// const url = 'mongodb://' + process.env.DB_HOST + ':' + process.env.DB_PORT
-
-// mongo.MongoClient.connect(url, { useUnifiedTopology: true, useNewUrlParser: true }, function(err, client) {
-//   if (err) {
-//     throw err
-//   }
-
-//   db = client.db(process.env.DB_NAME)
-// })
 
 
 
@@ -52,7 +39,7 @@ app
   .get('/answers', answers)
   .post('/updateAnswer', updateAnswer)
   .use(notFound)
-  .listen(8000)
+  
 
  
 
