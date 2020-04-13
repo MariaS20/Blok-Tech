@@ -4,6 +4,7 @@ const bodyParser = require('body-parser')
 const mongo = require('mongodb')
 const ejs = require('ejs')
 const slug = require('slug')
+const find = require('array-find')
 const port = 8000
 
 
@@ -11,6 +12,7 @@ require('dotenv').config()
 
 
 //connect met de database
+
 let db = null
 let collection;
 const MongoClient = require('mongodb').MongoClient;
@@ -48,9 +50,12 @@ app
   .get('/choice', choice)
   .get('/answers', answers)
   .post('/updateAnswer', updateAnswer)
+ .get('/matches', showMatches)
+  .get('/', match)
+  .get('/:id', match)
   .use(notFound)
+  .listen(8000)
   
-
  
 
 //vind de db die wordt gebruikt
@@ -105,6 +110,65 @@ function answers(req, res) {
   res.render('answers.ejs', {formData})
 
 }
+
+// function showMatches(req, res) {
+//   res.render('matches.ejs')
+// }
+
+//info van de matches
+const deMatches = [
+  {
+    id: 'match1',
+    name: 'naam1',
+    age: '22, Utrecht',
+    eten: 'Pizza', 
+    over: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad', 
+    foto: 'profiel1.jpg'
+  },
+  {
+    id: 'match2',
+    name: 'naam2',
+    age: '20, Leiden',
+    eten: 'Pizza', 
+    over: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad',
+    foto: 'profiel2.jpg' 
+  },
+  {
+    id: 'naam3',
+    name: 'ski mask the slump god',
+    age: '21, Amsterdam',
+    eten: 'Pizza',
+    over: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad',
+    foto: 'profiel3.jpg'
+  }
+
+]
+
+//weergeven van alle matches
+function showMatches(req, res) {
+  res.render('matches.ejs', {data: deMatches})
+}
+
+
+
+//pagina per individuele match
+function match(req, res, next) {
+  var id = req.params.id
+  var match = find(deMatches, function (value) {
+    return value.id === id
+  })
+
+  if (!match) {
+    next()
+    return
+  }
+
+  res.render('profile.ejs', {data: match})
+}
+
+
+
+
 
 function loginform(req, res) {
   res.render('login.ejs')

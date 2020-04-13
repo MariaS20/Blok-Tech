@@ -1,0 +1,19 @@
+<% include head.ejs %>
+
+<title>Matches pagina</title>
+<h1>Dit zijn je matches</h1>
+<section class="lijst-matches">
+<% for (var index = 0; index < data.length; index++) { %>
+<h2><a href="/<%= data[index].id %>"><%= data[index].name %></a></h2>
+<p><%= data[index].age %></p><p><%= data[index].eten %></p>
+
+
+    
+<% } %>
+</section>
+
+<section>
+    
+</section>
+
+<% include tail.ejs %>
