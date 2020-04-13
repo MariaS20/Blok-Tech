@@ -1,11 +1,11 @@
 <% include header.ejs %>
 <section class="profiel-info">
     <% if(data.foto === 'profiel1.jpg'){ %>
-        <img src="profiel1.jpg" alt="">
+        <img src="images/profiel1.jpg" alt="">
       <% } else if(data.foto === 'profiel2.jpg'){ %>  
-        <img src="profiel2.jpg" alt="">
+        <img src="images/profiel2.jpg" alt="">
       <%} else{ %>
-         <img src="profiel3.jpg" alt="">
+         <img src="images/profiel3.jpg" alt="">
      <% } %>
 
 <h1><%= data.name %></h1>
@@ -19,7 +19,7 @@
 
 
 <section class="liken">
-    <img src="kruisje.png" alt="">
-    <img src="hartje.png" alt="">
+    <img src="images/kruisje.png" alt="">
+    <img src="images/hartje.png" alt="">
 </section>
 <% include tail.ejs %>

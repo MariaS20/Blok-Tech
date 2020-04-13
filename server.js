@@ -86,7 +86,7 @@ const deMatches = [
     age: '22, Utrecht',
     eten: 'Favo eten: Lasagen', 
     over: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad', 
-    foto: 'profiel1.jpg'
+    foto: 'images/profiel1.jpg'
   },
   {
     id: 'match2',
@@ -94,7 +94,7 @@ const deMatches = [
     age: '20, Leiden',
     eten: 'Favo eten: Pizza', 
     over: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad',
-    foto: 'profiel2.jpg' 
+    foto: 'images/profiel2.jpg' 
   },
   {
     id: 'match3',
@@ -102,7 +102,7 @@ const deMatches = [
     age: '21, Amsterdam',
     eten: 'Favo eten: Sushi',
     over: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad',
-    foto: 'profiel3.jpg'
+    foto: 'images/profiel3.jpg'
   }
 
 ]
