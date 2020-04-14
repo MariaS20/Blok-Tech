@@ -179,7 +179,7 @@ function form(req, res) {
 }
 
 
-//functie om de al eerder opgeslagen antwoorden te veranderen
+//functie om de al eerder opgeslagen antwoorden te veranderen a
 function updateAnswer(req, res) {
   let form = req.body;
 
