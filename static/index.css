@@ -4,7 +4,7 @@ body {
   font-family: 'Abel', sans-serif;
   background: white;
   color: black;
-  max-width: 36em;
+  /* max-width: 36em; */
   margin: 0 auto
 }
 
@@ -34,7 +34,7 @@ label{
 form{
         
   background: white;
-  max-width: 500px;
+  /* max-width: 500px; */
   margin: 0 auto;
   padding: 1em;
   border: solid #ededed;
@@ -44,12 +44,12 @@ form{
   
 }
 
-form * {
+form {
   display: block;
   box-sizing: border-box;
  
   /*het geeft de padding en border mee aan de width en height van de box*/
-  width: 100%;
+  /* width: 100%; */
 }
 
 input, textarea, button {
@@ -139,4 +139,47 @@ a:visited {
   left: 0;
   right: 0;
   margin: auto;
+}
+
+
+/*//////////////////////////////////////////////////*/
+/* Hier begint de code voor het maken van de keuzes */
+/*//////////////////////////////////////////////////*/
+
+
+
+/*/ FORMFIELD /*/
+
+.food-form {
+  max-width: 50%;
+}
+
+.food-choice {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  
+}
+
+.food-choice img {
+  width: 100%;
+}
+
+[type=radio] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+[type=radio] + img { 
+  cursor: pointer;
+}
+
+[type=radio]:checked + img {
+  border: 3px solid #FFBAAC;
+}
+
+button { 
+  width: 100%;
 }

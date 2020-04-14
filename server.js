@@ -5,7 +5,7 @@ const mongo = require('mongodb')
 const ejs = require('ejs')
 const slug = require('slug')
 const find = require('array-find')
-const port = 8000
+const port = 4000
 
 
 require('dotenv').config()
@@ -28,7 +28,7 @@ client.connect(function (err, client) {
     throw err
   }
 
-  collection = client.db("blok-tech").collection("sendChoice");
+  collection = client.db("blok-tech").collection("sendChoice")
 })
 
 
