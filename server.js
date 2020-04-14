@@ -5,7 +5,7 @@ const mongo = require('mongodb')
 const ejs = require('ejs')
 const slug = require('slug')
 const find = require('array-find')
-const port = 4000
+const port = 8000
 
 
 require('dotenv').config()
@@ -38,7 +38,7 @@ app
   .use(bodyParser.urlencoded({extended: true}))
   .set('view engine', 'ejs')
   .set('views', 'view')
-  .get('/', gebruikers)
+  .get('/', loginform)
   .post('/', add)
   .post('/login', checklogin)
   .get('/registreren', form)
@@ -50,11 +50,10 @@ app
   .get('/choice', choice)
   .get('/answers', answers)
   .post('/updateAnswer', updateAnswer)
- .get('/matches', showMatches)
+  .get('/matches', showMatches)
   .get('/', match)
   .get('/:id', match)
   .use(notFound)
-  .listen(8000)
   
  
 
