@@ -107,50 +107,45 @@ a:visited {
   
 }
 
-.lijst-matches {
-  background-color: pink;
-  padding: 1em;
-  margin-bottom: 2em;
+
+/////////////////////////////////////////////////////
+/* Hier begint de code voor het maken van de keuzes /
+/////////////////////////////////////////////////////
+
+
+
+// FORMFIELD /*/
+
+.food-form {
+  max-width: 50%;
 }
 
-.lijst-matches p{ 
-  background-color: blue;
+.food-choice {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
 }
 
-.lijst-matches h2:first-of-type{
-  background-color: green;
-  margin-top: 0em;
+.food-choice img {
+  width: 100%;
 }
 
-.lijst-matches h2{
-  background-color: green;
-  margin-top: 5em;
+[type=radio] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
 
-.profiel-info {
-  color: red;
+[type=radio] + img { 
+  cursor: pointer;
 }
 
-.profiel-info img{
-  width: 60%;
-  display: block;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-  margin-top: 3em;
+[type=radio]:checked + img {
+  border: 3px solid #FFBAAC;
 }
 
-.liken {
-  margin-top: 2em;
-  display: inline-flex;
-  justify-content: space-around;
-}
-
-.liken img {
-  width: 15%;
-  height: 15%;
-
-  margin: 0;
+button { 
+  width: 100%;
 }
