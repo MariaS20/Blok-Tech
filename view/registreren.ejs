@@ -1,11 +1,11 @@
-<% include head.ejs %>
+<%- include ('head.ejs') %>
 <title>Registreren</title>
 <h1>Registreren</h1>
 <form action=/ method=post>
-  <label>Gebruikersnaam <input name=naam ></label>
-  <label>Email <input name=email></label>
-  <label>Wachtwoord <input name=wachtwoord type=password></label>
+  <label>Gebruikersnaam <input name='naam' ></label>
+  <label>Email <input name='email'></label>
+  <label>Wachtwoord <input name='wachtwoord' type='password'></label>
   <button>Toevoegen</button>
 </form>
-<a href="/login">Terug naar login</a>
-<% include tail.ejs %>
+<a href='/login'>Terug naar login</a>
+<%- include ('tail.ejs') %>
