@@ -124,14 +124,19 @@ function answers(req, res) {
 //   res.render('matches.ejs')
 // }
 
-//info van de matches
+//info van de matcthes
 const deMatches = [
   {
     id: 'match1',
     name: 'Sarah',
     age: '22, Utrecht',
+<<<<<<< HEAD
+    eten: 'Favo eten: Lasagna', 
+    over: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad', 
+=======
     eten: 'Favo eten: Lasagen', 
     over: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad', 
+>>>>>>> 72d7d1b2fee6246ed06202a0aff0ee07bb65215d
     foto: 'images/profiel1.jpg'
   },
   {
@@ -174,8 +179,6 @@ function match(req, res, next) {
 
   res.render('profile.ejs', {data: match})
 }
-
-
 
 
 

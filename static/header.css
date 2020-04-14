@@ -94,25 +94,42 @@ header {
     color: black;
     max-width: 36em;
     margin: 0 auto;
-    text-align: center
+    text-align: center;
+   
+    
   }
 
 .lijst-matches img:first-of-type{
-    width: 50%;
-    margin-top: 0em;
+    width: 60%;
+    margin-top: 1em;
+    
 }
 
 .lijst-matches img{
-    width: 50%;
+    width: 60%;
     margin-top: 4em;
+    
+}
+
+.lijst-matches p:last-of-type{
+  margin-bottom: 4em;
+  
 }
  
   .lijst-matches p{ 
-    background-color: blue;
+    font-size: 1.3em;
+  }
+
+  .lijst-matches a{
+    text-decoration: none;
+    color: black;
+  }
+
+  .lijst-matches a:hover{
+      opacity: 70%;
   }
   
   .lijst-matches h2{
-    background-color: green;
     margin-top: 1em;
   }
   
