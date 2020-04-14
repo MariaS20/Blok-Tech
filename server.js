@@ -13,8 +13,8 @@ require('dotenv').config()
 
 //connect met de database
 
-let db = null
-let collection;
+let db = null 
+let collection 
 const MongoClient = require('mongodb').MongoClient;
 const uri = "mongodb+srv://" + process.env.DB_USER + ":" + process.env.DB_PASS + "@blok-tech-ezc4c.mongodb.net/test?retryWrites=true&w=majority"
 const client = new MongoClient(uri, {
@@ -27,14 +27,27 @@ client.connect(function (err, client) {
   if (err) {
     throw err
   }
+<<<<<<< HEAD
 
   collection = client.db("blok-tech").collection("sendChoice")
+=======
+  
+  collection = client.db("blok-tech").collection("sendChoice");
+  
+>>>>>>> 79a73d68c6c814fd645ad9391a1b510f8b8a104f
 })
 
+client.connect(function (err, client) {
+  if (err) {
+    throw err
+  }
+
+  collection = client.db("blok-tech").collection("users");
+})
 
 app
   .use(express.static('static'))
-  .use(express.static('public'))
+  // .use(express.static('public'))
   .use(bodyParser.urlencoded({extended: true}))
   .set('view engine', 'ejs')
   .set('views', 'view')
@@ -54,12 +67,17 @@ app
   .get('/', match)
   .get('/:id', match)
   .use(notFound)
+<<<<<<< HEAD
+=======
+  // .listen(8000)
+
+>>>>>>> 79a73d68c6c814fd645ad9391a1b510f8b8a104f
   
  
 
 //vind de db die wordt gebruikt
 function gebruikers(req, res, next) {
-  db.collection('user').find().toArray(done)
+  collection.find().toArray(done)
 
   function done(err, data) {
     if (err) {
@@ -73,7 +91,7 @@ function gebruikers(req, res, next) {
 // function user(req, res, next) {
 //   const id = req.params.id
 
-//   db.collection('user').findOne({
+//   db.collection('users').findOne({
 //     _id: new mongo.ObjectID(id)
 //   }, done)
 
@@ -118,27 +136,27 @@ function answers(req, res) {
 const deMatches = [
   {
     id: 'match1',
-    name: 'naam1',
+    name: 'Sarah',
     age: '22, Utrecht',
-    eten: 'Pizza', 
+    eten: 'Favo eten: Lasagen', 
     over: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad', 
-    foto: 'profiel1.jpg'
+    foto: 'images/profiel1.jpg'
   },
   {
     id: 'match2',
-    name: 'naam2',
+    name: 'Julia',
     age: '20, Leiden',
-    eten: 'Pizza', 
+    eten: 'Favo eten: Pizza', 
     over: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad',
-    foto: 'profiel2.jpg' 
+    foto: 'images/profiel2.jpg' 
   },
   {
-    id: 'naam3',
-    name: 'ski mask the slump god',
+    id: 'match3',
+    name: 'Lisa',
     age: '21, Amsterdam',
-    eten: 'Pizza',
+    eten: 'Favo eten: Sushi',
     over: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad',
-    foto: 'profiel3.jpg'
+    foto: 'images/profiel3.jpg'
   }
 
 ]
@@ -178,7 +196,7 @@ function form(req, res) {
 }
 
 
-//functie om de al eerder opgeslagen antwoorden te veranderen
+//functie om de al eerder opgeslagen antwoorden te veranderen a
 function updateAnswer(req, res) {
   let form = req.body;
 
@@ -241,6 +259,7 @@ function sendChoice(req, res, next) {
   }
 }
 
+//Code Tess
 function add(req, res, next) {
   collection.insertOne({
     naam: req.body.naam,
@@ -259,10 +278,10 @@ function add(req, res, next) {
 
 //checkt de ingegeven username en het wachtwoord met die uit de database 
 function checklogin(req, res, next) {
-  db.collection('user').findOne({naam:req.body.naam}, done) 
+  collection.findOne({naam:req.body.naam}, inloggen) 
 
 
-  function done(err, data) {
+  function inloggen(err, data) {
     if (err) {
       next(err)
     } else {
