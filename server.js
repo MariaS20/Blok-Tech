@@ -69,7 +69,7 @@ app
 
 //vind de db die wordt gebruikt
 function gebruikers(req, res, next) {
-  collection('users').find().toArray(done)
+  collection.find().toArray(done)
 
   function done(err, data) {
     if (err) {
@@ -270,10 +270,10 @@ function add(req, res, next) {
 
 //checkt de ingegeven username en het wachtwoord met die uit de database 
 function checklogin(req, res, next) {
-  collection.findOne({naam:req.body.naam}, done) 
+  collection.findOne({naam:req.body.naam}, inloggen) 
 
 
-  function done(err, data) {
+  function inloggen(err, data) {
     if (err) {
       next(err)
     } else {
