@@ -27,14 +27,9 @@ client.connect(function (err, client) {
   if (err) {
     throw err
   }
-<<<<<<< HEAD
-
-  collection = client.db("blok-tech").collection("sendChoice")
-=======
   
   collection = client.db("blok-tech").collection("sendChoice");
   
->>>>>>> 79a73d68c6c814fd645ad9391a1b510f8b8a104f
 })
 
 client.connect(function (err, client) {
@@ -47,7 +42,7 @@ client.connect(function (err, client) {
 
 app
   .use(express.static('static'))
-  // .use(express.static('public'))
+  .use(express.static('public'))
   .use(bodyParser.urlencoded({extended: true}))
   .set('view engine', 'ejs')
   .set('views', 'view')
@@ -67,11 +62,8 @@ app
   .get('/', match)
   .get('/:id', match)
   .use(notFound)
-<<<<<<< HEAD
-=======
-  // .listen(8000)
+  
 
->>>>>>> 79a73d68c6c814fd645ad9391a1b510f8b8a104f
   
  
 

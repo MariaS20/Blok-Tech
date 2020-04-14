@@ -139,7 +139,6 @@ a:visited {
   left: 0;
   right: 0;
   margin: auto;
-<<<<<<< HEAD
 }
 
 
@@ -162,9 +161,11 @@ a:visited {
   
 }
 
-.food-choice img {
+.food-choice {
   width: 100%;
 }
+
+
 
 [type=radio] {
   position: absolute;
@@ -173,17 +174,23 @@ a:visited {
   height: 0;
 }
 
+
 [type=radio] + img { 
+  width: 100%;
   cursor: pointer;
+  filter: brightness(60%)
 }
 
 [type=radio]:checked + img {
-  border: 3px solid #FFBAAC;
+  outline: 3px solid #FFBAAC;
+  box-sizing: content-box;
+  outline-offset: -4px;
+  filter: brightness(100%)
 }
+
 
 button { 
   width: 100%;
-=======
   margin-top: 3em;
 }
 
@@ -198,5 +205,4 @@ button {
   height: 15%;
 
   margin: 0;
->>>>>>> 79a73d68c6c814fd645ad9391a1b510f8b8a104f
 }
