@@ -16,7 +16,7 @@ require('dotenv').config()
 let db = null 
 let collection 
 const MongoClient = require('mongodb').MongoClient;
-const uri = "mongodb+srv://" + process.env.DB_USER + ":" + process.env.DB_PASS + "@blok-tech-ezc4c.mongodb.net/test?retryWrites=true&w=majority"
+const uri = 'mongodb+srv://' + process.env.DB_USER + ':' + process.env.DB_PASS + '@blok-tech-ezc4c.mongodb.net/test?retryWrites=true&w=majority'
 const client = new MongoClient(uri, {
   useNewUrlParser: true,
   useUnifiedTopology: true
@@ -28,7 +28,7 @@ client.connect(function (err, client) {
     throw err
   }
   
-  collection = client.db("blok-tech").collection("sendChoice");
+  collection = client.db('blok-tech').collection('sendChoice');
   
 })
 
@@ -37,7 +37,7 @@ client.connect(function (err, client) {
     throw err
   }
 
-  collection = client.db("blok-tech").collection("users");
+  collection = client.db('blok-tech').collection('users')
 })
 
 app
@@ -131,7 +131,7 @@ const deMatches = [
     name: 'Sarah',
     age: '22, Utrecht',
     eten: 'Favo eten: Lasagen', 
-    over: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad', 
+    over: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad', 
     foto: 'images/profiel1.jpg'
   },
   {
@@ -139,7 +139,7 @@ const deMatches = [
     name: 'Julia',
     age: '20, Leiden',
     eten: 'Favo eten: Pizza', 
-    over: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad',
+    over: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad',
     foto: 'images/profiel2.jpg' 
   },
   {
@@ -208,10 +208,10 @@ function updateAnswer(req, res) {
         return
       } else {
         resetSelectedImages();
-        formData.imageSet1.find(x => x.name === form.food1).selected = true;
-        formData.imageSet2.find(x => x.name === form.food2).selected = true;
-        formData.imageSet3.find(x => x.name === form.food3).selected = true;
-        res.redirect('/answers');
+        formData.imageSet1.find(x => x.name === form.food1).selected = true
+        formData.imageSet2.find(x => x.name === form.food2).selected = true
+        formData.imageSet3.find(x => x.name === form.food3).selected = true
+        res.redirect('/answers')
       }
     }
 }
@@ -219,18 +219,18 @@ function updateAnswer(req, res) {
 //reset alle images en zet selected op false
 function resetSelectedImages() {
   for(i = 0; i < formData.imageSet1.length; i++) {
-    formData.imageSet1[i].selected = false;
+    formData.imageSet1[i].selected = false
   }
   for(i = 0; i < formData.imageSet2.length; i++) {
-    formData.imageSet2[i].selected = false;
+    formData.imageSet2[i].selected = false
   }
   for(i = 0; i < formData.imageSet3.length; i++) {
-    formData.imageSet3[i].selected = false;
+    formData.imageSet3[i].selected = false
   }
 }
 
 function sendChoice(req, res, next) {
-  let form = req.body;
+  let form = req.body
 
   collection.insertOne({
     Interest1: form.food1,
@@ -242,11 +242,11 @@ function sendChoice(req, res, next) {
     if (err) {
       next(err)
     } else {
-      formData.id = data.insertedId;
-      formData.imageSet1.find(x => x.name === form.food1).selected = true;
-      formData.imageSet2.find(x => x.name === form.food2).selected = true;
-      formData.imageSet3.find(x => x.name === form.food3).selected = true;
-      res.redirect('/answers');
+      formData.id = data.insertedId
+      formData.imageSet1.find(x => x.name === form.food1).selected = true
+      formData.imageSet2.find(x => x.name === form.food2).selected = true
+      formData.imageSet3.find(x => x.name === form.food3).selected = true
+      res.redirect('/answers')
     }
   }
 }
@@ -296,4 +296,4 @@ function notFound(req, res) {
   res.status(404).render('404.ejs')
 }
 
-app.listen(port, () => console.log(`app running on port: ${port}`));
+app.listen(port, () => console.log(`app running on port: ${port}`))
