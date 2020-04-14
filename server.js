@@ -242,7 +242,7 @@ function sendChoice(req, res, next) {
 }
 
 function add(req, res, next) {
-  db.collection('user').insertOne({
+  collection.insertOne({
     naam: req.body.naam,
     email: req.body.email,
     wachtwoord: req.body.wachtwoord
