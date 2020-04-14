@@ -13,8 +13,10 @@ require('dotenv').config()
 
 //connect met de database
 
+// let db
 let db = null
-let collection;
+let collection
+// let collectionUsers
 const MongoClient = require('mongodb').MongoClient;
 const uri = "mongodb+srv://" + process.env.DB_USER + ":" + process.env.DB_PASS + "@blok-tech-ezc4c.mongodb.net/test?retryWrites=true&w=majority"
 const client = new MongoClient(uri, {
@@ -27,8 +29,9 @@ client.connect(function (err, client) {
   if (err) {
     throw err
   }
-
+  
   collection = client.db("blok-tech").collection("sendChoice");
+  // collectionUsers = client.db("blok-tech").collection("users");
 })
 
 
@@ -38,7 +41,7 @@ app
   .use(bodyParser.urlencoded({extended: true}))
   .set('view engine', 'ejs')
   .set('views', 'view')
-  .get('/', gebruikers)
+  .get('/', loginform)
   .post('/', add)
   .post('/login', checklogin)
   .get('/registreren', form)
@@ -50,7 +53,7 @@ app
   .get('/choice', choice)
   .get('/answers', answers)
   .post('/updateAnswer', updateAnswer)
- .get('/matches', showMatches)
+  .get('/matches', showMatches)
   .get('/', match)
   .get('/:id', match)
   .use(notFound)
@@ -60,7 +63,7 @@ app
 
 //vind de db die wordt gebruikt
 function gebruikers(req, res, next) {
-  db.collection('user').find().toArray(done)
+  db.collection('users').find().toArray(done)
 
   function done(err, data) {
     if (err) {
