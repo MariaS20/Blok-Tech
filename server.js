@@ -13,10 +13,8 @@ require('dotenv').config()
 
 //connect met de database
 
-// let db
-let db = null
-let collection
-// let collectionUsers
+let db = null 
+let collection 
 const MongoClient = require('mongodb').MongoClient;
 const uri = "mongodb+srv://" + process.env.DB_USER + ":" + process.env.DB_PASS + "@blok-tech-ezc4c.mongodb.net/test?retryWrites=true&w=majority"
 const client = new MongoClient(uri, {
@@ -31,13 +29,20 @@ client.connect(function (err, client) {
   }
   
   collection = client.db("blok-tech").collection("sendChoice");
-  // collectionUsers = client.db("blok-tech").collection("users");
+  
 })
 
+client.connect(function (err, client) {
+  if (err) {
+    throw err
+  }
+
+  collection = client.db("blok-tech").collection("users");
+})
 
 app
   .use(express.static('static'))
-  .use(express.static('public'))
+  // .use(express.static('public'))
   .use(bodyParser.urlencoded({extended: true}))
   .set('view engine', 'ejs')
   .set('views', 'view')
@@ -57,13 +62,14 @@ app
   .get('/', match)
   .get('/:id', match)
   .use(notFound)
-  
+  // .listen(8000)
+
   
  
 
 //vind de db die wordt gebruikt
 function gebruikers(req, res, next) {
-  db.collection('users').find().toArray(done)
+  collection.find().toArray(done)
 
   function done(err, data) {
     if (err) {
@@ -77,7 +83,7 @@ function gebruikers(req, res, next) {
 // function user(req, res, next) {
 //   const id = req.params.id
 
-//   db.collection('user').findOne({
+//   db.collection('users').findOne({
 //     _id: new mongo.ObjectID(id)
 //   }, done)
 
@@ -182,7 +188,7 @@ function form(req, res) {
 }
 
 
-//functie om de al eerder opgeslagen antwoorden te veranderen
+//functie om de al eerder opgeslagen antwoorden te veranderen a
 function updateAnswer(req, res) {
   let form = req.body;
 
@@ -245,8 +251,9 @@ function sendChoice(req, res, next) {
   }
 }
 
+//Code Tess
 function add(req, res, next) {
-  db.collection('user').insertOne({
+  collection.insertOne({
     naam: req.body.naam,
     email: req.body.email,
     wachtwoord: req.body.wachtwoord
@@ -263,10 +270,10 @@ function add(req, res, next) {
 
 //checkt de ingegeven username en het wachtwoord met die uit de database 
 function checklogin(req, res, next) {
-  db.collection('user').findOne({naam:req.body.naam}, done) 
+  collection.findOne({naam:req.body.naam}, inloggen) 
 
 
-  function done(err, data) {
+  function inloggen(err, data) {
     if (err) {
       next(err)
     } else {
