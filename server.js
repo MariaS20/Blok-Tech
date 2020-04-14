@@ -13,15 +13,8 @@ require('dotenv').config()
 
 //connect met de database
 
-<<<<<<< HEAD
-// let db = null
-let collection;
-=======
-// let db
-let db = null
-let collection
-// let collectionUsers
->>>>>>> 1bfc12665e4c7aba08d5bddc4986190d28834337
+let db = null 
+let collection 
 const MongoClient = require('mongodb').MongoClient;
 const uri = "mongodb+srv://" + process.env.DB_USER + ":" + process.env.DB_PASS + "@blok-tech-ezc4c.mongodb.net/test?retryWrites=true&w=majority"
 const client = new MongoClient(uri, {
@@ -36,7 +29,7 @@ client.connect(function (err, client) {
   }
   
   collection = client.db("blok-tech").collection("sendChoice");
-  // collectionUsers = client.db("blok-tech").collection("users");
+  
 })
 
 client.connect(function (err, client) {
@@ -69,18 +62,14 @@ app
   .get('/', match)
   .get('/:id', match)
   .use(notFound)
-<<<<<<< HEAD
   // .listen(8000)
 
-=======
-  
->>>>>>> 1bfc12665e4c7aba08d5bddc4986190d28834337
   
  
 
 //vind de db die wordt gebruikt
 function gebruikers(req, res, next) {
-  db.collection('users').find().toArray(done)
+  collection('users').find().toArray(done)
 
   function done(err, data) {
     if (err) {
@@ -94,7 +83,7 @@ function gebruikers(req, res, next) {
 // function user(req, res, next) {
 //   const id = req.params.id
 
-//   db.collection('user').findOne({
+//   db.collection('users').findOne({
 //     _id: new mongo.ObjectID(id)
 //   }, done)
 
@@ -264,7 +253,7 @@ function sendChoice(req, res, next) {
 
 //Code Tess
 function add(req, res, next) {
-  db.collection('users').insertOne({
+  collection.insertOne({
     naam: req.body.naam,
     email: req.body.email,
     wachtwoord: req.body.wachtwoord
@@ -281,7 +270,7 @@ function add(req, res, next) {
 
 //checkt de ingegeven username en het wachtwoord met die uit de database 
 function checklogin(req, res, next) {
-  db.collection('users').findOne({naam:req.body.naam}, done) 
+  collection.findOne({naam:req.body.naam}, done) 
 
 
   function done(err, data) {
