@@ -13,7 +13,7 @@ require('dotenv').config()
 
 //connect met de database
 
-let db = null
+// let db = null
 let collection;
 const MongoClient = require('mongodb').MongoClient;
 const uri = "mongodb+srv://" + process.env.DB_USER + ":" + process.env.DB_PASS + "@blok-tech-ezc4c.mongodb.net/test?retryWrites=true&w=majority"
@@ -31,10 +31,17 @@ client.connect(function (err, client) {
   collection = client.db("blok-tech").collection("sendChoice");
 })
 
+client.connect(function (err, client) {
+  if (err) {
+    throw err
+  }
+
+  collection = client.db("blok-tech").collection("users");
+})
 
 app
   .use(express.static('static'))
-  .use(express.static('public'))
+  // .use(express.static('public'))
   .use(bodyParser.urlencoded({extended: true}))
   .set('view engine', 'ejs')
   .set('views', 'view')
@@ -54,13 +61,14 @@ app
   .get('/', match)
   .get('/:id', match)
   .use(notFound)
-  .listen(8000)
+  // .listen(8000)
+
   
  
 
 //vind de db die wordt gebruikt
 function gebruikers(req, res, next) {
-  db.collection('user').find().toArray(done)
+  db.collection('users').find().toArray(done)
 
   function done(err, data) {
     if (err) {
@@ -242,8 +250,9 @@ function sendChoice(req, res, next) {
   }
 }
 
+//Code Tess
 function add(req, res, next) {
-  db.collection('user').insertOne({
+  db.collection('users').insertOne({
     naam: req.body.naam,
     email: req.body.email,
     wachtwoord: req.body.wachtwoord
@@ -260,7 +269,7 @@ function add(req, res, next) {
 
 //checkt de ingegeven username en het wachtwoord met die uit de database 
 function checklogin(req, res, next) {
-  db.collection('user').findOne({naam:req.body.naam}, done) 
+  db.collection('users').findOne({naam:req.body.naam}, done) 
 
 
   function done(err, data) {
