@@ -94,7 +94,7 @@ header {
     color: black;
     max-width: 36em;
     margin: 0 auto;
-    text-align: center
+    text-align: center;
   }
 
 .lijst-matches img:first-of-type{
@@ -108,11 +108,19 @@ header {
 }
  
   .lijst-matches p{ 
-    background-color: blue;
+    font-size: 1.3em;
+  }
+
+  .lijst-matches a{
+    text-decoration: none;
+    color: black;
+  }
+
+  .lijst-matches a:hover{
+      opacity: 70%;
   }
   
   .lijst-matches h2{
-    background-color: green;
     margin-top: 1em;
   }
   

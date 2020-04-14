@@ -84,7 +84,7 @@ const deMatches = [
     id: 'match1',
     name: 'Sarah',
     age: '22, Utrecht',
-    eten: 'Favo eten: Lasagen', 
+    eten: 'Favo eten: Lasagna', 
     over: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad', 
     foto: 'images/profiel1.jpg'
   },
