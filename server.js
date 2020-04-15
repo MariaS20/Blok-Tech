@@ -124,7 +124,7 @@ function answers(req, res) {
 //   res.render('matches.ejs')
 // }
 
-//info van de matches
+//info van de matcthes
 const deMatches = [
   {
     id: 'match1',
@@ -174,8 +174,6 @@ function match(req, res, next) {
 
   res.render('profile.ejs', {data: match})
 }
-
-
 
 
 

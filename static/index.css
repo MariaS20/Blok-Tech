@@ -107,30 +107,6 @@ a:visited {
   
 }
 
-.lijst-matches {
-  background-color: pink;
-  padding: 1em;
-  margin-bottom: 2em;
-}
-
-.lijst-matches p{ 
-  background-color: blue;
-}
-
-.lijst-matches h2:first-of-type{
-  background-color: green;
-  margin-top: 0em;
-}
-
-.lijst-matches h2{
-  background-color: green;
-  margin-top: 5em;
-}
-
-.profiel-info {
-  color: red;
-}
-
 .profiel-info img{
   width: 60%;
   display: block;
@@ -209,17 +185,17 @@ a:visited {
 button { 
   width: 100%;
   margin-top: 2em;
+
 }
 
-.liken {
-  margin-top: 2em;
-  display: inline-flex;
-  justify-content: space-around;
+[type=radio] + img { 
+  cursor: pointer;
 }
 
-.liken img {
-  width: 15%;
-  height: 15%;
+[type=radio]:checked + img {
+  border: 3px solid #FFBAAC;
+}
 
-  margin: 0;
+button { 
+  width: 100%;
 }
