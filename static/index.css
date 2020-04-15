@@ -166,7 +166,6 @@ a:visited {
 }
 
 
-
 [type=radio] {
   position: absolute;
   opacity: 0;
@@ -188,10 +187,28 @@ a:visited {
   filter: brightness(100%)
 }
 
+.button {
+  text-decoration: none;
+  background-color: #FFF;
+  padding: 1em;
+  margin: 1em 0 0;
+  font-size: 1.2em;
+  font-family: 'Oswald', sans-serif;
+  border-radius: 5px;
+  border: 3px solid #FFBAAC;
+  outline-color: #FFBAAC;
+}
+
+.button:hover {
+  background: #FFBAAC;
+   color: #FFF;
+   border-color: #FFBAAC;
+   transition: all 0.6s ease 0.1s;
+ }
 
 button { 
   width: 100%;
-  margin-top: 3em;
+  margin-top: 2em;
 }
 
 .liken {
