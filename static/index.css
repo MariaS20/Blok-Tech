@@ -4,7 +4,7 @@ body {
   font-family: 'Abel', sans-serif;
   background: white;
   color: black;
-  max-width: 36em;
+  /* max-width: 36em; */
   margin: 0 auto
 }
 
@@ -44,12 +44,12 @@ form{
   
 }
 
-form * {
+form {
   display: block;
   box-sizing: border-box;
  
   /*het geeft de padding en border mee aan de width en height van de box*/
-  width: 100%;
+  /* width: 100%; */
 }
 
 input, textarea, button {
@@ -105,4 +105,97 @@ a {
 a:visited {
   text-decoration: none;
   
+}
+
+.profiel-info img{
+  width: 60%;
+  display: block;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+
+/*///////////////////////////////////////////////////*/
+/* Hier begint de code voor het maken van de keuzes */
+/*///////////////////////////////////////////////////*/
+
+
+
+/*/ FORMFIELD /*/
+
+.food-form {
+  max-width: 50%;
+}
+
+.food-choice {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  
+}
+
+.food-choice {
+  width: 100%;
+}
+
+
+[type=radio] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+
+[type=radio] + img { 
+  width: 100%;
+  cursor: pointer;
+  filter: brightness(60%)
+}
+
+[type=radio]:checked + img {
+  outline: 3px solid #FFBAAC;
+  box-sizing: content-box;
+  outline-offset: -4px;
+  filter: brightness(100%)
+}
+
+.button {
+  text-decoration: none;
+  background-color: #FFF;
+  padding: 1em;
+  margin: 1em 0 0;
+  font-size: 1.2em;
+  font-family: 'Oswald', sans-serif;
+  border-radius: 5px;
+  border: 3px solid #FFBAAC;
+  outline-color: #FFBAAC;
+}
+
+.button:hover {
+  background: #FFBAAC;
+   color: #FFF;
+   border-color: #FFBAAC;
+   transition: all 0.6s ease 0.1s;
+ }
+
+button { 
+  width: 100%;
+  margin-top: 2em;
+
+}
+
+[type=radio] + img { 
+  cursor: pointer;
+}
+
+[type=radio]:checked + img {
+  border: 3px solid #FFBAAC;
+}
+
+button { 
+  width: 100%;
 }

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<%- include('head.ejs') %>
+    <body></body>
+            <main>
+                <section>
+                    <h1>Wat vind je het lekkerste?</h1>
+                    <form action=/sendChoice method='POST' class='food-form'>
+
+                        <div class='food-choice'>
+                            
+                            <label class='form-label'>
+                                <input class='choice1' type='radio' name='food1' value='<%= formData.imageSet1[0].name %>' required>
+                                <img src=<%= formData.imageSet1[0].imageUrl %>>
+                            </label>
+
+                            <label class='form-label'>
+                                <input type='radio' name='food1' value='<%= formData.imageSet1[1].name %>'>
+                                <img src=<%= formData.imageSet1[1].imageUrl %>>
+                            </label>
+                        </div>
+
+                        <div class='food-choice'>
+                            <label class='form-label'>
+                                <input class='choice1' type='radio' name='food2' value='<%= formData.imageSet2[0].name %>' required>
+                                <img src=<%= formData.imageSet2[0].imageUrl %>>
+                            </label>
+
+                            <label class='form-label'>
+                                <input type='radio' name='food2' value='<%= formData.imageSet2[1].name %>'>
+                                <img src=<%= formData.imageSet2[1].imageUrl %>>
+                            </label>
+                        </div>
+
+                        <div class='food-choice'>
+                            <label class='form-label'>
+                                <input class='choice1' type='radio' name='food3' value='<%= formData.imageSet3[0].name %>' required>
+                                <img src=<%= formData.imageSet3[0].imageUrl %>>
+                            </label>
+
+                            <label class='form-label'>
+                                <input type='radio' name='food3" value='<%= formData.imageSet3[1].name %>'>
+                                <img src=<%= formData.imageSet3[1].imageUrl %>>
+                            </label>
+                        </div>
+                        
+                        
+                        <button type='submit'>
+                            Kies dit
+                        </button>
+                    </form>
+                </section>
+            </main>
+        <%- include('tail.ejs') %>
+    </body>
+    <script src='../public/script/steps.js'></script>
+</html>

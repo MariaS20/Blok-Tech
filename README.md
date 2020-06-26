@@ -1,26 +1,32 @@
 In deze readme kun je informatie vinden over de feature die ik heb gebouwd.
 
-# Datingapp
+# Foodie
 
-## Over de app
-Voor een datingapp moest ik een feature uitwerken, de feature is het inloggen en registreren voor een datingapp. De naam van de app is Soundmatch em je match op interesse in de zelfde muziek.  
+We hebben een datingsapp gemaakt voor voedselliefhebbers. Onze gebruiker kan een profiel aanmaken in de app en voorkeuren geven over zijn/haar interesses.
 
-## Mijn job story
-Wanneer ik op een ander device zit, wil ik makkelijk kunnen inloggen, zodat ik hier niet veel tijd aan hoef te besteden.
+# Code style
 
-## Build with
-Ik heb de code editor Visual Studio Code gebruikt. Voor het installeren van de database en packages de standaard terminal op MacOS.
 
-## Database
-Ik maak gebruik van MongoDb, deze heb ik lokaal geïnstalleerd. 
+# Screenshots
+
+
+# Tech
+* We hebben de server opgezet met Express en NodeJS. 
+* Al templating engine gebruiken we EJS.
+* Om bestanden cloud op te slaan in de database gebruiken we mongoDB.
+
+# Features
+* Inloggen en registreren
+* Matchen
+* Filteren  
 
 ## Het installeren 
 
 1. Open een terminal
 
-2. Clone mijn repository 
+2. Clone onze repository 
 ```
-git clone https://github.com/MariaS20/Blok-Tech 
+git clone https://github.com/Jeroen777/Foodie 
 ```
 
 3. Zodra je in de clone van mijn repository zit, installeer npm 
@@ -34,7 +40,7 @@ node server.js
 ```
 
 ## Packages
-Hieronder de packages die ik heb gebruikt.
+Hieronder de packages die we hebben gebruikt.
 
 Express     https://expressjs.com
 
@@ -49,10 +55,12 @@ slug        https://www.npmjs.com/package/slug
 dotenv      https://www.npmjs.com/package/dotenv
 
 ## Wiki
-Voor meer informatie over het project en het onderzoek dat ik heb gedaan kunt u in mijn wiki kijken. 
+Voor meer informatie over het project kun je in onze wiki kijken.
 
 
 ## License
 Dit project maakt gebruik van een MIT License. 
 
 [MIT License](https://github.com/MariaS20/Blok-Tech/blob/master/LICENSE.md)
+
+Deze app is gemaakt Jeroen Besselink, Jenny Nijhof en Tess Smit
